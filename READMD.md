@@ -53,14 +53,14 @@ cloud-functions/
 | 方法 | 端点 | 说明 | 示例 |
 |------|------|------|------|
 | GET | `/api/album/{album_id}` | 获取本子详情（包含完整章节列表） | `/api/album/1220749` |
-| GET | `/api/album?id={album_id}` | 获取本子详情（查询参数方式） | `/api/album?id=1220749` |
+| GET | `/api/album?id={album_id}` | 获取本子详情（查询参数方式） | `/api/album?id={album_id}` |
 
 ### 章节接口
 
 | 方法 | 端点 | 说明 | 示例 |
 |------|------|------|------|
 | GET | `/api/photo/{photo_id}` | 获取章节图片列表 | `/api/photo/1220752` |
-| GET | `/api/photo?id={photo_id}` | 获取章节图片列表（查询参数方式） | `/api/photo?id=1220752` |
+| GET | `/api/photo?id={photo_id}` | 获取章节图片列表（查询参数方式） | `/api/photo?id={photo_id}` |
 
 ## 📊 响应格式
 
@@ -150,13 +150,16 @@ cloud-functions/
 curl https://your-project.edgeone.app/api
 
 # 获取本子数据（路径方式）
-curl https://your-project.edgeone.app/api/album/1220749
+curl https://your-project.edgeone.app/api/album/{album_id}
 
 # 获取本子数据（查询参数方式）
-curl https://your-project.edgeone.app/api/album?id=1220749
+curl https://your-project.edgeone.app/api/album?id={album_id}
 
-# 获取章节图片
-curl https://your-project.edgeone.app/api/photo/1220752
+# 获取章节图片（路径方式）
+curl https://your-project.edgeone.app/api/photo/{photo_id}
+
+# 获取章节图片（查询参数方式）
+curl https://your-project.edgeone.app/api/photo?id={photo_id}
 ```
 
 🔧 本地开发
