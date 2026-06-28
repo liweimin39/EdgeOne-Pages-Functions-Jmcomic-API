@@ -27,6 +27,7 @@ Jmcomic API 是一个部署在 EdgeOne Pages 上的 Serverless API 服务，提�
 
 cloud-functions/
 ├── api/
+│   ├── index.py
 │   ├── album/
 │   │   └── index.py
 │   ├── photo/
