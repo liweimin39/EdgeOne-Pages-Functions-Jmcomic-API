@@ -52,7 +52,7 @@ cloud-functions/
 
 | 方法 | 端点 | 说明 | 示例 |
 |------|------|------|------|
-| GET | `/api/album/{album_id}` | 获取本子详情（包含完整章节列表） | `/api/album/1220749` |
+| GET | `/api/album/{album_id}` | 获取本子详情（包含完整章节列表） | `/api/album/{album_id}` |
 | GET | `/api/album?id={album_id}` | 获取本子详情（查询参数方式） | `/api/album?id={album_id}` |
 
 ### 章节接口
