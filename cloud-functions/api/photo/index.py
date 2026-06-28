@@ -33,7 +33,8 @@ class handler(BaseHTTPRequestHandler):
         if not photo_id:
             self._send_json(200, {
                 'message': '请使用 /api/photo/<photo_id> 或 /api/photo?id=<photo_id>',
-                'example': '/api/photo/1220752'
+                'example': '/api/photo/{photo_id}',
+                'example_query': '/api/photo?id={photo_id}'
             })
             return
         
@@ -65,7 +66,6 @@ class handler(BaseHTTPRequestHandler):
                     'url': f'https://cdn-msp.jmapiproxy1.cc/media/photos/{photo_id}/{img_name}'
                 })
             
-            # ★ 从 raw_data 中提取标题，确保中文正常
             title = raw_data.get('name', '')
             
             self._send_json(200, {
@@ -84,7 +84,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
-        # ★ 确保 ensure_ascii=False，保留中文
         self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
     
     def _send_error(self, status, msg):

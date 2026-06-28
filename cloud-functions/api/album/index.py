@@ -37,12 +37,11 @@ class handler(BaseHTTPRequestHandler):
         if not album_id:
             self._send_json(200, {
                 'message': '请使用 /api/album/<album_id> 或 /api/album?id=<album_id>',
-                'example': '/api/album/1220749',
-                'example_query': '/api/album?id=1220749'
+                'example': '/api/album/{album_id}',
+                'example_query': '/api/album?id={album_id}'
             })
             return
         
-        # ★ 直接获取本子详情 + 章节列表，不再区分 /photos
         self._get_album_photos(album_id)
     
     def _get_album_photos(self, album_id):

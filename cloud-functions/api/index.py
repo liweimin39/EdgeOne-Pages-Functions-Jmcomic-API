@@ -24,7 +24,7 @@ class handler(BaseHTTPRequestHandler):
                 '/api/photo?id=<id>': '获取章节图片列表',
             },
             'example': {
-                '本子详情': '/api/album/1220749',
-                '章节图片': '/api/photo/1220752',
+                '本子详情': '/api/album/{album_id}',
+                '章节图片': '/api/photo/{photo_id}',
             }
         }, ensure_ascii=False).encode('utf-8'))
