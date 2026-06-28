@@ -72,17 +72,17 @@ cloud-functions/
 
 二、获取本子详情
 
-· 端点：GET /api/album/{album_id} 或 GET /api/album?id={album_id}
-· 说明：获取指定本子的详细信息，包括作者、标签、章节列表等
+- 端点：GET /api/album/{album_id} 或 GET /api/album?id={album_id}
+- 说明：获取指定本子的详细信息，包括作者、标签、章节列表等
 
 ⚠️ 重要：album_id 必须是禁漫车号（本子 ID）
 
-· ✅ 正确示例：/api/album/179377（179377 是禁漫车号）
-· ❌ 错误示例：/api/album/179378（179378 是禁漫号，不是车号）
+- ✅ 正确示例：/api/album/179377（179377 是禁漫车号）
+- ❌ 错误示例：/api/album/179378（179378 是禁漫号，不是车号）
 
 请求参数：
 
-· id（必填）：禁漫车号，纯数字
+- id（必填）：禁漫车号，纯数字
 
 响应示例：
 
@@ -119,25 +119,25 @@ cloud-functions/
 
 错误码说明：
 
-· 400：album_id 必须是纯数字
-· 404：本子不存在
-· 429：请求过于频繁
-· 504：请求超时
-· 500：服务器内部错误
+- 400：album_id 必须是纯数字
+- 404：本子不存在
+- 429：请求过于频繁
+- 504：请求超时
+- 500：服务器内部错误
 
 三、获取章节图片
 
-· 端点：GET /api/photo/{photo_id} 或 GET /api/photo?id={photo_id}
-· 说明：获取指定章节的图片列表，返回图片 CDN 链接
+- 端点：GET /api/photo/{photo_id} 或 GET /api/photo?id={photo_id}
+- 说明：获取指定章节的图片列表，返回图片 CDN 链接
 
 ⚠️ 重要：photo_id 可以是禁漫车号或禁漫号
 
-· 传入禁漫车号（如 179377）：返回该本子第一个章节的图片列表
-· 传入禁漫号（如 179378）：返回该具体章节的图片列表
+- 传入禁漫车号（如 179377）：返回该本子第一个章节的图片列表
+- 传入禁漫号（如 179378）：返回该具体章节的图片列表
 
 请求参数：
 
-· id（必填）：禁漫号或禁漫车号，纯数字
+- id（必填）：禁漫号或禁漫车号，纯数字
 
 响应示例：
 
@@ -166,27 +166,27 @@ cloud-functions/
 
 错误码说明：
 
-· 400：photo_id 必须是纯数字
-· 404：章节不存在
-· 429：请求过于频繁
-· 504：请求超时
-· 500：服务器内部错误
+- 400：photo_id 必须是纯数字
+- 404：章节不存在
+- 429：请求过于频繁
+- 504：请求超时
+- 500：服务器内部错误
 
 📊 数据模型说明
 
 禁漫车号（Album ID）
 
-· 定义：本子的唯一标识符，也称"车号"
-· 特征：纯数字，如 179377
-· 用途：用于 /api/album 接口获取本子详情
-· 示例：/api/album/179377
+- 定义：本子的唯一标识符，也称"车号"
+- 特征：纯数字，如 179377
+- 用途：用于 /api/album 接口获取本子详情
+- 示例：/api/album/179377
 
 禁漫号（Photo ID）
 
-· 定义：章节的唯一标识符，也称"章节号"
-· 特征：纯数字，如 179378
-· 用途：用于 /api/photo 接口获取章节图片
-· 示例：/api/photo/179378
+- 定义：章节的唯一标识符，也称"章节号"
+- 特征：纯数字，如 179378
+- 用途：用于 /api/photo 接口获取章节图片
+- 示例：/api/photo/179378
 
 关系说明
 
@@ -202,8 +202,8 @@ cloud-functions/
 
 接口兼容性
 
-· 禁漫车号（如 179377）→ /api/album：✅ 可以，/api/photo：✅ 可以（返回第一话）
-· 禁漫号（如 179378）→ /api/album：❌ 不可以，/api/photo：✅ 可以
+- 禁漫车号（如 179377）→ /api/album：✅ 可以，/api/photo：✅ 可以（返回第一话）
+- 禁漫号（如 179378）→ /api/album：❌ 不可以，/api/photo：✅ 可以
 
 推荐使用流程
 
@@ -224,18 +224,18 @@ cloud-functions/
 
 错误码说明：
 
-· 400：请求参数错误，检查参数格式是否为纯数字
-· 404：资源不存在，检查 ID 是否正确
-· 429：请求过于频繁，降低请求频率，稍后重试
-· 504：请求超时，稍后重试
-· 500：服务器内部错误，联系管理员
+- 400：请求参数错误，检查参数格式是否为纯数字
+- 404：资源不存在，检查 ID 是否正确
+- 429：请求过于频繁，降低请求频率，稍后重试
+- 504：请求超时，稍后重试
+- 500：服务器内部错误，联系管理员
 
 🚀 部署指南
 
 准备工作
 
-· EdgeOne Pages 账号
-· Git 仓库（GitHub / GitLab / Gitee）
+- EdgeOne Pages 账号
+- Git 仓库（GitHub / GitLab / Gitee）
 
 部署步骤
 
@@ -264,8 +264,8 @@ curl https://your-project.edgeone.app/api/photo/179378
 
 环境要求
 
-· Python 3.10+
-· pip
+- Python 3.10+
+- pip
 
 安装依赖
 
@@ -284,17 +284,17 @@ python -c "from utils.client import JmClient; print('OK')"
 
 核心模块
 
-· Client（client.py）：API 请求客户端，支持重试、域名切换、Token 生成
-· Parser（parser.py）：数据解析器，处理中文编码和 CDN URL 构建
-· Crypto（crypto.py）：加密/解密工具，处理 API 数据和域名解密
-· Models（models.py）：数据模型定义（JmAlbum、JmPhoto、JmImage）
+- Client（client.py）：API 请求客户端，支持重试、域名切换、Token 生成
+- Parser（parser.py）：数据解析器，处理中文编码和 CDN URL 构建
+- Crypto（crypto.py）：加密/解密工具，处理 API 数据和域名解密
+- Models（models.py）：数据模型定义（JmAlbum、JmPhoto、JmImage）
 
 技术栈
 
-· 运行时：Python 3.x（EdgeOne Pages Functions）
-· HTTP 客户端：requests
-· 加密库：pycryptodome（AES-ECB）
-· 部署平台：EdgeOne Pages Functions
+- 运行时：Python 3.x（EdgeOne Pages Functions）
+- HTTP 客户端：requests
+- 加密库：pycryptodome（AES-ECB）
+- 部署平台：EdgeOne Pages Functions
 
 关键特性
 
